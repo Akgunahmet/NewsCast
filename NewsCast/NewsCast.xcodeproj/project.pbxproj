@@ -17,6 +17,9 @@
 		E4C55FFC2A0D14CB00F6F428 /* NewsCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C55FFB2A0D14CB00F6F428 /* NewsCastTests.swift */; };
 		E4C560062A0D14CB00F6F428 /* NewsCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C560052A0D14CB00F6F428 /* NewsCastUITests.swift */; };
 		E4C560082A0D14CB00F6F428 /* NewsCastUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C560072A0D14CB00F6F428 /* NewsCastUITestsLaunchTests.swift */; };
+		E4C560162A0D15DC00F6F428 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C560152A0D15DC00F6F428 /* CustomTabBarVC.swift */; };
+		E4C5601F2A0D1F2E00F6F428 /* NewsCastAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E4C5601E2A0D1F2E00F6F428 /* NewsCastAPI */; };
+		E4C560252A0D23EB00F6F428 /* PopularMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C560232A0D23EB00F6F428 /* PopularMovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,8 @@
 		E4C560052A0D14CB00F6F428 /* NewsCastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCastUITests.swift; sourceTree = "<group>"; };
 		E4C560072A0D14CB00F6F428 /* NewsCastUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCastUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E4C560142A0D14E800F6F428 /* NewsCastAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NewsCastAPI; path = ../NewsCastAPI; sourceTree = "<group>"; };
+		E4C560152A0D15DC00F6F428 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
+		E4C560232A0D23EB00F6F428 /* PopularMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C5601F2A0D1F2E00F6F428 /* NewsCastAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,7 @@
 				E4C55FFA2A0D14CB00F6F428 /* NewsCastTests */,
 				E4C560042A0D14CB00F6F428 /* NewsCastUITests */,
 				E4C55FDF2A0D14CA00F6F428 /* Products */,
+				E4C5601D2A0D1F2E00F6F428 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +118,8 @@
 				E4C55FEF2A0D14CA00F6F428 /* LaunchScreen.storyboard */,
 				E4C55FF22A0D14CA00F6F428 /* Info.plist */,
 				E4C55FEA2A0D14CA00F6F428 /* NewsCast.xcdatamodeld */,
+				E4C560152A0D15DC00F6F428 /* CustomTabBarVC.swift */,
+				E4C560232A0D23EB00F6F428 /* PopularMovieCell.swift */,
 			);
 			path = NewsCast;
 			sourceTree = "<group>";
@@ -132,6 +141,13 @@
 			path = NewsCastUITests;
 			sourceTree = "<group>";
 		};
+		E4C5601D2A0D1F2E00F6F428 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +164,9 @@
 			dependencies = (
 			);
 			name = NewsCast;
+			packageProductDependencies = (
+				E4C5601E2A0D1F2E00F6F428 /* NewsCastAPI */,
+			);
 			productName = NewsCast;
 			productReference = E4C55FDE2A0D14CA00F6F428 /* NewsCast.app */;
 			productType = "com.apple.product-type.application";
@@ -263,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C560252A0D23EB00F6F428 /* PopularMovieCell.swift in Sources */,
 				E4C55FE62A0D14CA00F6F428 /* ViewController.swift in Sources */,
 				E4C55FEC2A0D14CA00F6F428 /* NewsCast.xcdatamodeld in Sources */,
+				E4C560162A0D15DC00F6F428 /* CustomTabBarVC.swift in Sources */,
 				E4C55FE22A0D14CA00F6F428 /* AppDelegate.swift in Sources */,
 				E4C55FE42A0D14CA00F6F428 /* SceneDelegate.swift in Sources */,
 			);
@@ -608,6 +629,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4C5601E2A0D1F2E00F6F428 /* NewsCastAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NewsCastAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E4C55FEA2A0D14CA00F6F428 /* NewsCast.xcdatamodeld */ = {
