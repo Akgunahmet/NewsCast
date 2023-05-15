@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public struct PopularMovieResponse: Decodable {
+public struct NewsResponse: Decodable {
     public let results: [News]
     
     private enum RootCodingKeys: String, CodingKey {

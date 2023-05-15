@@ -24,7 +24,7 @@ class CustomTabBarvc: UITabBarController, UITabBarControllerDelegate {
     func setupMiddleButton() {
         let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 28, y: -20, width: 60, height: 60))
         
-        middleButton.setBackgroundImage(UIImage(named: "home6"), for: .normal)
+        middleButton.setBackgroundImage(UIImage(named: "home"), for: .normal)
         middleButton.layer.shadowColor = UIColor.black.cgColor
         middleButton.layer.shadowOpacity = 0.1
         middleButton.layer.shadowOffset = CGSize(width: 4, height: 4)
@@ -39,4 +39,13 @@ class CustomTabBarvc: UITabBarController, UITabBarControllerDelegate {
         self.selectedIndex = 1
     }
     
+}
+extension UIView {
+
+   @IBInspectable var cornerRadius: CGFloat{
+       get{return self.cornerRadius}
+       set{
+            self.layer.cornerRadius = newValue
+        }
+    }
 }
