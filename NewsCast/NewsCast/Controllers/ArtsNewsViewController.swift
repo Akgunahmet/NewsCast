@@ -67,6 +67,4 @@ extension ArtsNewsViewController: UITableViewDelegate,UITableViewDataSource {
     //            return 0.0 // boş hücre için sıfır yükseklik
     //        }
     //    }
-
-    
 }

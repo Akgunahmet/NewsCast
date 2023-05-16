@@ -9,9 +9,9 @@ import UIKit
 import NewsCastAPI
 
 class ViewController: UIViewController {
-
-
-    @IBOutlet weak var worldButton: UIButton!
+  
+    
+    
     @IBOutlet weak var tableView: UITableView!
     let service: NewsServiceProtocol = NewsService()
     private var news: [News] = []
@@ -21,14 +21,14 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         fetchHomeNews()
         navigationItem.title = "Home News"
+        
     }
   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
     }
-    
+   
     @IBAction func worldButtonClicked(_ sender: UIButton) {
       fetchWorldNews()
         navigationItem.title = "World News"
@@ -129,7 +129,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let news = self.news[indexPath.row]
         if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
-            return 150.0 // normal hücre yüksekliği
+            return 165.0 // normal hücre yüksekliği
         } else {
             return 0.0 // boş hücre için sıfır yükseklik
         }

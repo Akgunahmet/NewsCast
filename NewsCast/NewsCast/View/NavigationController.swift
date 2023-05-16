@@ -12,7 +12,6 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.tintColor = UIColor.darkGray
-        
     }
 }
 

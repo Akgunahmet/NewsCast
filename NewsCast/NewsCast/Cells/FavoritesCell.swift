@@ -6,28 +6,28 @@
 //
 
 import UIKit
-import NewsCastAPI
+
 
 class FavoritesCell: UITableViewCell {
-
+    
     @IBOutlet weak var favoritesImage: UIImageView!
     @IBOutlet weak var favoritesTitle: UILabel!
+    
+    @IBOutlet weak var favoritesAbstract: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    func setup(news: News) {
-
+    func setup(favorite: NewsFavorites) {
         
-        
-        if let media = news.multimedia?.first, let urlString = media.url, let url = URL(string: urlString) {
-                   favoritesImage.sd_setImage(with: url, placeholderImage: nil)
-               }
+        favoritesTitle.text = "\(favorite.favoriteTitle ?? "") "
+        favoritesAbstract.text = "\(favorite.favoritesAbstract ?? "") "
+        if let imageData = favorite.favoritesImage {
+            favoritesImage.image = UIImage(data: imageData)
+        } else {
+            favoritesImage.image = UIImage(named: "placeholder") // or any other default image
+        }
     }
 }

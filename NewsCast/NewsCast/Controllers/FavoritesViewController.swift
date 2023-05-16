@@ -6,11 +6,7 @@
 //
 
 import UIKit
-import NewsCastAPI
 import CoreData
-
-
-
 class FavoritesViewController: UIViewController {
     
     let context = appDelegate.persistentContainer.viewContext
@@ -21,17 +17,15 @@ class FavoritesViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        veriOkuma()
+        fetchData()
         tableView.reloadData()
     }
-    
-        func veriOkuma(){
+        func fetchData(){
             do{
                 favoriteNewsList = try context.fetch(NewsFavorites.fetchRequest())
             } catch {
                 print("Hata")
             }
-         
         }
 }
 
@@ -41,24 +35,19 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let kisi = favoriteNewsList[indexPath.row]
+        let favorite = favoriteNewsList[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell", for: indexPath) as! FavoritesCell
-        
-        cell.favoritesTitle.text = "\(kisi.favoriteTitle ?? "") "
-        if let imageData = kisi.favoritesImage {
-            cell.favoritesImage.image = UIImage(data: imageData)
-        } else {
-            cell.favoritesImage.image = UIImage(named: "placeholder") // or any other default image
-        }
+
+        cell.setup(favorite: favorite)
         
         
         return cell
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Sil") { (action, view, completionHandler) in
-            let kisi = self.favoriteNewsList[indexPath.row]
-            self.context.delete(kisi)
+            let favorite = self.favoriteNewsList[indexPath.row]
+            self.context.delete(favorite)
             appDelegate.saveContext()
             self.favoriteNewsList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
@@ -71,13 +60,15 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let kisi = self.favoriteNewsList[indexPath.row]
-            self.context.delete(kisi)
+            let favorite = self.favoriteNewsList[indexPath.row]
+            self.context.delete(favorite)
             appDelegate.saveContext()
             self.favoriteNewsList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
-    }}
+    }
+  
+}
 
 
     
