@@ -48,24 +48,25 @@ extension ArtsNewsViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArtsCell", for: indexPath) as! ArtsCell
         let news = self.news[indexPath.row]
-     cell.configur(news: news)
+        cell.setup(news: news)
         return cell
-            
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedNews = news[indexPath.row]
         let newDetailsVC = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as! NewsDetailsViewController
         newDetailsVC.news = selectedNews
         self.navigationController?.pushViewController(newDetailsVC, animated: true)
-      
+        
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let news = self.news[indexPath.row]
-//        if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
-//            return 150.0 // normal hücre yüksekliği
-//        } else {
-//            return 0.0 // boş hücre için sıfır yükseklik
-//        }
-//    }
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        let news = self.news[indexPath.row]
+    //        if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
+    //            return 150.0 // normal hücre yüksekliği
+    //        } else {
+    //            return 0.0 // boş hücre için sıfır yükseklik
+    //        }
+    //    }
 
+    
 }

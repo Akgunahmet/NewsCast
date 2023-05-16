@@ -5,11 +5,9 @@
 //  Created by Ahmet Akgün on 11.05.2023.
 //
 
-import UIKit
-
 import NewsCastAPI
 import UIKit
-import SDWebImage
+//import SDWebImage
 
 class NewsCell: UITableViewCell {
 

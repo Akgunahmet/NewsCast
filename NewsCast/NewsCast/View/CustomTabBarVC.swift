@@ -20,9 +20,9 @@ class CustomTabBarvc: UITabBarController, UITabBarControllerDelegate {
         self.selectedIndex = 1
         setupMiddleButton()
     }
-    
     func setupMiddleButton() {
-        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 28, y: -20, width: 60, height: 60))
+        let middleButton = UIButton()
+        middleButton.translatesAutoresizingMaskIntoConstraints = false
         
         middleButton.setBackgroundImage(UIImage(named: "home"), for: .normal)
         middleButton.layer.shadowColor = UIColor.black.cgColor
@@ -32,20 +32,44 @@ class CustomTabBarvc: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.addSubview(middleButton)
         middleButton.addTarget(self, action: #selector(menuButtonAction), for: .touchUpInside)
         
-        self.view.layoutIfNeeded()
+        // Constraints
+        middleButton.centerXAnchor.constraint(equalTo: self.tabBar.centerXAnchor).isActive = true
+        middleButton.widthAnchor.constraint(equalToConstant: 55).isActive = true
+        middleButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        
+        if #available(iOS 11.0, *) {
+            middleButton.bottomAnchor.constraint(equalTo: self.tabBar.safeAreaLayoutGuide.bottomAnchor, constant: -7).isActive = true
+        } else {
+            middleButton.bottomAnchor.constraint(equalTo: self.tabBar.bottomAnchor, constant: -7).isActive = true
+        }
     }
     
+    //    func setupMiddleButton() {
+    //        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 28, y: -20, width: 60, height: 60))
+    //
+    //        middleButton.setBackgroundImage(UIImage(named: "home"), for: .normal)
+    //        middleButton.layer.shadowColor = UIColor.black.cgColor
+    //        middleButton.layer.shadowOpacity = 0.1
+    //        middleButton.layer.shadowOffset = CGSize(width: 4, height: 4)
+    //
+    //        self.tabBar.addSubview(middleButton)
+    //        middleButton.addTarget(self, action: #selector(menuButtonAction), for: .touchUpInside)
+    //
+    //        self.view.layoutIfNeeded()
+    //    }
+    //
     @objc func menuButtonAction(sender: UIButton) {
         self.selectedIndex = 1
     }
-    
-}
-extension UIView {
-
-   @IBInspectable var cornerRadius: CGFloat{
-       get{return self.cornerRadius}
-       set{
-            self.layer.cornerRadius = newValue
-        }
-    }
+    //
+    //}
+    //    extension UIView {
+    //
+    //        @IBInspectable var cornerRadius: CGFloat{
+    //            get{return self.cornerRadius}
+    //            set{
+    //                self.layer.cornerRadius = newValue
+    //            }
+    //        }
+    //    }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 import NewsCastAPI
-import SDWebImage
+//import SDWebImage
 
 class ArtsCell: UITableViewCell {
     
@@ -17,7 +17,12 @@ class ArtsCell: UITableViewCell {
     
     @IBOutlet weak var artsNewsAbstract: UILabel!
     @IBOutlet weak var artsNewsByline: UILabel!
-    func configur(news: News) {
+    override func awakeFromNib() {
+         super.awakeFromNib()
+         
+     }
+ 
+    func setup(news: News) {
 
         artsNewsTitle.text = news.title
         artsNewsByline.text = news.byline
@@ -26,4 +31,7 @@ class ArtsCell: UITableViewCell {
                    artsNewsImage.sd_setImage(with: url, placeholderImage: nil)
                }
     }
+
+    
+     
 }
