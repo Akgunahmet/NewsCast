@@ -11,24 +11,20 @@ import NewsCastAPI
 
 class NewsCell: UITableViewCell {
     
-    @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var abstract: UILabel!
     @IBOutlet weak var byline: UILabel!
-    
     @IBOutlet weak var favorite: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
     func configure(news: News) {
-        
         title.text = news.title
         abstract.text = news.abstract
         byline.text = news.byline
         if let media = news.multimedia?.first, let urlString = media.url, let url = URL(string: urlString) {
-            movieImage.sd_setImage(with: url, placeholderImage: nil)
+            newsImage.sd_setImage(with: url, placeholderImage: nil)
         }
-       
     }
 }

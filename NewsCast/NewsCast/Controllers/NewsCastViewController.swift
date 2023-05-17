@@ -8,7 +8,7 @@
 import UIKit
 import NewsCastAPI
 
-class ViewController: UIViewController {
+class NewsCastViewController: UIViewController {
   
     
     
@@ -19,9 +19,8 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchHomeNews()
-        navigationItem.title = "Home News"
-        
+        fetchNewsCast()
+        navigationItem.title = "NewsCast"
     }
   
     override func viewDidLoad() {
@@ -43,9 +42,9 @@ class ViewController: UIViewController {
     }
 
     
-    fileprivate func fetchHomeNews() {
+    fileprivate func fetchNewsCast() {
        // self.showLoading()
-        service.fetchHomeNews { [weak self] response in
+        service.fetchNewsCast { [weak self] response in
             guard let self else { return }
           //  self.hideLoading()
             switch response {
@@ -53,7 +52,7 @@ class ViewController: UIViewController {
                 self.news = news
                 self.tableView.reloadData()
             case .failure(let error):
-                print("KERIM: \(error)")
+                print("FetchHomeNews: \(error)")
             }
         }
     }
@@ -67,7 +66,7 @@ class ViewController: UIViewController {
                 self.news = news
                 self.tableView.reloadData()
             case .failure(let error):
-                print("KERIM: \(error)")
+                print("FetchWorldNews: \(error)")
             }
         }
     }
@@ -81,7 +80,7 @@ class ViewController: UIViewController {
                 self.news = news
                 self.tableView.reloadData()
             case .failure(let error):
-                print("KERIM: \(error)")
+                print("FetchScienceNews: \(error)")
             }
         }
     }
@@ -95,13 +94,13 @@ class ViewController: UIViewController {
                 self.news = news
                 self.tableView.reloadData()
             case .failure(let error):
-                print("KERIM: \(error)")
+                print("FetchUsNews: \(error)")
             }
         }
     }
 
 }
-extension ViewController: UITableViewDelegate,UITableViewDataSource {
+extension NewsCastViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return news.count
     }
@@ -110,12 +109,6 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
         let news = self.news[indexPath.row]
      cell.configure(news: news)
-//        if news.isValid //&& !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil)
-//        {
-//             cell.configure(news: news)
-//         } else {
-//             cell.isHidden = true
-//         }
         return cell
             
     }
@@ -129,7 +122,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let news = self.news[indexPath.row]
         if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
-            return 165.0 // normal hücre yüksekliği
+            return 165.0 
         } else {
             return 0.0 // boş hücre için sıfır yükseklik
         }

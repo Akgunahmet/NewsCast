@@ -7,15 +7,13 @@
 
 import Foundation
 import UIKit
+
 class CustomTabBarvc: UITabBarController, UITabBarControllerDelegate {
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.delegate = self
         self.selectedIndex = 1
         setupMiddleButton()
@@ -23,7 +21,6 @@ class CustomTabBarvc: UITabBarController, UITabBarControllerDelegate {
     func setupMiddleButton() {
         let middleButton = UIButton()
         middleButton.translatesAutoresizingMaskIntoConstraints = false
-        
         middleButton.setBackgroundImage(UIImage(named: "home"), for: .normal)
         middleButton.layer.shadowColor = UIColor.black.cgColor
         middleButton.layer.shadowOpacity = 0.1

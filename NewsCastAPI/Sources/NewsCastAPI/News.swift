@@ -30,12 +30,10 @@ public struct News: Decodable {
     public var isValid: Bool {
         return title != nil || abstract != nil || multimedia?.first != nil
         }
-    
     enum CodingKeys: String, CodingKey {
         case section, title, abstract, byline, multimedia, url
         case itemType = "item_type"
         case updatedDate = "updated_date"
-        
     }
 }
 public struct Media: Decodable {

@@ -140,12 +140,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="218"/>
+            <point key="canvasLocation" x="3784" y="-2"/>
         </scene>
-        <!--Home News-->
+        <!--NewsCast-->
         <scene sceneID="oJQ-td-cjq">
             <objects>
-                <viewController id="grb-c7-b7h" customClass="ViewController" customModule="NewsCast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="grb-c7-b7h" customClass="NewsCastViewController" customModule="NewsCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEm-po-W18">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,7 +241,7 @@
                                         <connections>
                                             <outlet property="abstract" destination="6KX-XS-dQj" id="6At-7I-mMX"/>
                                             <outlet property="byline" destination="Yvv-Ar-se0" id="sPV-uc-cnP"/>
-                                            <outlet property="movieImage" destination="5eo-8h-Qog" id="hkG-b0-G7p"/>
+                                            <outlet property="newsImage" destination="5eo-8h-Qog" id="4nV-is-TCv"/>
                                             <outlet property="title" destination="FXf-bj-Fkx" id="l39-St-wf5"/>
                                         </connections>
                                     </tableViewCell>
@@ -296,7 +296,7 @@
                             <constraint firstItem="HQ2-eZ-q27" firstAttribute="top" secondItem="mII-QJ-uws" secondAttribute="top" constant="10" id="d9G-En-aTX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home News" id="p8k-qk-gbx"/>
+                    <navigationItem key="navigationItem" title="NewsCast" id="p8k-qk-gbx"/>
                     <connections>
                         <outlet property="tableView" destination="p96-B4-Z3C" id="Jpv-Zx-dKG"/>
                         <segue destination="Buc-E1-Qax" kind="show" identifier="gofromVCtoDetailsVC" id="p88-e7-nM0"/>
@@ -304,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1WR-tk-BaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3194.6564885496182" y="-508.45070422535213"/>
+            <point key="canvasLocation" x="2807" y="-720"/>
         </scene>
         <!--News Details View Controller-->
         <scene sceneID="at0-hH-tbs">
@@ -318,7 +318,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OIA-Dw-boP">
-                                        <rect key="frame" x="10" y="20" width="373" height="490"/>
+                                        <rect key="frame" x="10" y="20" width="373" height="530"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBZ-cK-TwS">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="200"/>
@@ -362,6 +362,34 @@
                                                     <action selector="seeDetailsButtonClicked:" destination="Buc-E1-Qax" eventType="touchUpInside" id="GMZ-Np-P1s"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tVi-JD-gUm">
+                                                <rect key="frame" x="0.0" y="500" width="373" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoriler" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-nz-GbW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="338" id="9rw-Pv-4UF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-QU-GOw">
+                                                        <rect key="frame" x="343" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="61r-gK-vG9"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="aWb-P7-9Ht"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system">
+                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="favoriteButtonClicked:" destination="Buc-E1-Qax" eventType="touchUpInside" id="Gfs-F9-hgU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -383,30 +411,17 @@
                             <constraint firstItem="4gZ-5A-dHQ" firstAttribute="leading" secondItem="OX1-q3-kJu" secondAttribute="leading" id="egg-ry-2rS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" customizationIdentifier="" id="gTx-8t-gOH">
-                        <barButtonItem key="rightBarButtonItem" id="Jzw-fJ-CiQ">
-                            <imageReference key="image" image="star" catalog="system" renderingMode="hierarchical-single">
-                                <hierarchicalColors>
-                                    <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color systemColor="secondaryLabelColor"/>
-                                    <color systemColor="tertiaryLabelColor"/>
-                                </hierarchicalColors>
-                            </imageReference>
-                            <connections>
-                                <action selector="AddButton:" destination="Buc-E1-Qax" id="sO7-IU-aDb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" customizationIdentifier="" id="gTx-8t-gOH"/>
                     <connections>
                         <outlet property="NewsImage" destination="yBZ-cK-TwS" id="if0-AW-bBJ"/>
-                        <outlet property="favoritesButton" destination="Jzw-fJ-CiQ" id="hIS-cb-roL"/>
+                        <outlet property="denemeButonImage" destination="bQz-QU-GOw" id="kPa-h1-9Df"/>
                         <outlet property="newsAbstract" destination="Qhu-9N-bSb" id="IBr-LH-A7y"/>
                         <outlet property="newsTitle" destination="Naw-L2-5Vf" id="C0q-f9-L6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhN-Cc-Sgp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4008" y="-508"/>
+            <point key="canvasLocation" x="3785" y="-720"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="o8p-rS-gfB">
@@ -512,14 +527,27 @@
                             <constraint firstItem="9XT-3Q-swq" firstAttribute="trailing" secondItem="FTP-ZR-YvM" secondAttribute="trailing" id="xcu-wA-aGM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" id="mmd-o3-AXs"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="mmd-o3-AXs">
+                        <barButtonItem key="rightBarButtonItem" id="i3B-OZ-CJ1">
+                            <imageReference key="image" image="trash" catalog="system" renderingMode="hierarchical">
+                                <hierarchicalColors>
+                                    <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                            <connections>
+                                <action selector="deleteAll:" destination="jGP-oY-pNZ" id="ggZ-Ol-xC6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="FTP-ZR-YvM" id="SvE-8Q-jJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcF-UL-9IT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5281.679389312977" y="202.81690140845072"/>
+            <point key="canvasLocation" x="3784" y="744"/>
         </scene>
         <!--Custom Tab Barvc-->
         <scene sceneID="hQj-1S-IDJ">
@@ -541,7 +569,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHB-Ta-6yC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="671" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L1c-Gv-M6c">
@@ -560,7 +588,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIs-Jx-nbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2267.93893129771" y="-508.45070422535213"/>
+            <point key="canvasLocation" x="1766" y="-720"/>
         </scene>
         <!--Arts-->
         <scene sceneID="kJW-cn-e4o">
@@ -594,7 +622,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkk-s7-e6R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014.5038167938931" y="217.60563380281693"/>
+            <point key="canvasLocation" x="2807" y="-2"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="ysy-gt-Rah">
@@ -628,7 +656,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKu-Fb-qmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4354.9618320610689" y="202.81690140845072"/>
+            <point key="canvasLocation" x="2807" y="744"/>
         </scene>
     </scenes>
     <resources>
@@ -636,6 +664,7 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="theatermask.and.paintbrush" catalog="system" width="128" height="122"/>
         <image name="theatermask.and.paintbrush.fill" catalog="system" width="128" height="122"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -17,7 +17,7 @@ enum Constants: String {
     case world = "/svc/topstories/v2/world.json?api-key="
 }
 public protocol NewsServiceProtocol: AnyObject {
-    func fetchHomeNews(completion: @escaping (Result<[News], Error>) -> Void)
+    func fetchNewsCast(completion: @escaping (Result<[News], Error>) -> Void)
    func fetchWorldNews(completion: @escaping (Result<[News], Error>) -> Void)
    func fetchArtsNews(completion: @escaping (Result<[News], Error>) -> Void)
    func fetchScienceNews(completion: @escaping (Result<[News], Error>) -> Void)
@@ -29,7 +29,7 @@ public class NewsService: NewsServiceProtocol {
     
     public init() {}
     
-    public func fetchHomeNews(completion: @escaping (Result<[News], Error>) -> Void) {
+    public func fetchNewsCast(completion: @escaping (Result<[News], Error>) -> Void) {
         
         let urlString = Constants.baseURL.rawValue + Constants.home.rawValue + Constants.APIKey.rawValue
         AF.request(urlString).responseData { response in
@@ -90,10 +90,8 @@ public class NewsService: NewsServiceProtocol {
                 print("**** GEÇİCİ BİR HATA OLUŞTU: \(error.localizedDescription) ******")
             }
         }
-        
     }
     public func fetchScienceNews(completion: @escaping (Result<[News], Error>) -> Void) {
-        
         let urlString = Constants.baseURL.rawValue + Constants.science.rawValue + Constants.APIKey.rawValue
         AF.request(urlString).responseData { response in
             switch response.result {

@@ -17,13 +17,10 @@ class ArtsNewsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchArtsNews()
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBar.tintColor = UIColor.darkGray
-              
-        // Do any additional setup after loading the view.
     }
     fileprivate func fetchArtsNews() {
        // self.showLoading()
@@ -59,12 +56,12 @@ extension ArtsNewsViewController: UITableViewDelegate,UITableViewDataSource {
         self.navigationController?.pushViewController(newDetailsVC, animated: true)
         
     }
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        let news = self.news[indexPath.row]
-    //        if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
-    //            return 150.0 // normal hücre yüksekliği
-    //        } else {
-    //            return 0.0 // boş hücre için sıfır yükseklik
-    //        }
-    //    }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            let news = self.news[indexPath.row]
+            if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
+                return 165.0
+            } else {
+                return 0.0
+            }
+        }
 }
