@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 
 class FavoritesCell: UITableViewCell {
@@ -14,6 +15,9 @@ class FavoritesCell: UITableViewCell {
     @IBOutlet weak var favoritesTitle: UILabel!
     
     @IBOutlet weak var favoritesAbstract: UILabel!
+    var favorite: NewsFavorites?
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -28,6 +32,11 @@ class FavoritesCell: UITableViewCell {
             favoritesImage.image = UIImage(data: imageData)
         } else {
             favoritesImage.image = UIImage(named: "placeholder") // or any other default image
+            
         }
     }
+
+    
 }
+ 
+

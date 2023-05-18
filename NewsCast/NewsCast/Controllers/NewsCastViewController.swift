@@ -12,10 +12,12 @@ class NewsCastViewController: UIViewController {
   
     
     
+ 
+    @IBOutlet weak var favoriteImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     let service: NewsServiceProtocol = NewsService()
     private var news: [News] = []
-   // private var media: [Media] = []
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -114,9 +116,13 @@ extension NewsCastViewController: UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedNews = news[indexPath.row]
-        let newDetailsVC = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as! NewsDetailsViewController
-        newDetailsVC.news = selectedNews
-        self.navigationController?.pushViewController(newDetailsVC, animated: true)
+//        let newDetailsVC = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as! NewsDetailsViewController
+//        newDetailsVC.news = selectedNews
+//        self.navigationController?.pushViewController(newDetailsVC, animated: true)
+        let detailsVC = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsVC") as! NewsDetailsViewController
+            detailsVC.news = selectedNews
+            detailsVC.detailsSourceType = .newsCast
+            navigationController?.pushViewController(detailsVC, animated: true)
       
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

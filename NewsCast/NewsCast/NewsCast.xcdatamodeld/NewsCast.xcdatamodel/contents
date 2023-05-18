@@ -4,5 +4,6 @@
         <attribute name="favoritesAbstract" optional="YES" attributeType="String"/>
         <attribute name="favoritesImage" optional="YES" attributeType="Binary"/>
         <attribute name="favoriteTitle" optional="YES" attributeType="String"/>
+        <attribute name="favoriteURL" optional="YES" attributeType="String"/>
     </entity>
 </model>

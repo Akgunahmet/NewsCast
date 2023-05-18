@@ -25,6 +25,8 @@ class NewsCell: UITableViewCell {
         byline.text = news.byline
         if let media = news.multimedia?.first, let urlString = media.url, let url = URL(string: urlString) {
             newsImage.sd_setImage(with: url, placeholderImage: nil)
+            
         }
     }
+    
 }
