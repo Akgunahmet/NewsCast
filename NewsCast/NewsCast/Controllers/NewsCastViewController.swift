@@ -8,7 +8,7 @@
 import UIKit
 import NewsCastAPI
 
-class NewsCastViewController: UIViewController {
+class NewsCastViewController: UIViewController, LoadingShowable {
   
     
     
@@ -45,10 +45,10 @@ class NewsCastViewController: UIViewController {
 
     
     fileprivate func fetchNewsCast() {
-       // self.showLoading()
+       self.showLoading()
         service.fetchNewsCast { [weak self] response in
             guard let self else { return }
-          //  self.hideLoading()
+          self.hideLoading()
             switch response {
             case .success(let news):
                 self.news = news
@@ -59,10 +59,10 @@ class NewsCastViewController: UIViewController {
         }
     }
     fileprivate func fetchWorldNews() {
-       // self.showLoading()
+      self.showLoading()
         service.fetchWorldNews { [weak self] response in
             guard let self else { return }
-          //  self.hideLoading()
+         self.hideLoading()
             switch response {
             case .success(let news):
                 self.news = news
@@ -73,10 +73,10 @@ class NewsCastViewController: UIViewController {
         }
     }
     fileprivate func fetchScienceNews() {
-       // self.showLoading()
+      self.showLoading()
         service.fetchScienceNews { [weak self] response in
             guard let self else { return }
-          //  self.hideLoading()
+       self.hideLoading()
             switch response {
             case .success(let news):
                 self.news = news
@@ -87,10 +87,10 @@ class NewsCastViewController: UIViewController {
         }
     }
     fileprivate func fetchUsNews() {
-       // self.showLoading()
+      self.showLoading()
         service.fetchUsNews { [weak self] response in
             guard let self else { return }
-          //  self.hideLoading()
+         self.hideLoading()
             switch response {
             case .success(let news):
                 self.news = news

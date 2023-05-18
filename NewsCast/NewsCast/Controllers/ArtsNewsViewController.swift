@@ -8,7 +8,7 @@
 import UIKit
 import NewsCastAPI
 
-class ArtsNewsViewController: UIViewController {
+class ArtsNewsViewController: UIViewController{
 
    
     @IBOutlet weak var tableView: UITableView!
@@ -23,16 +23,14 @@ class ArtsNewsViewController: UIViewController {
         self.navigationController!.navigationBar.tintColor = UIColor.darkGray
     }
     fileprivate func fetchArtsNews() {
-       // self.showLoading()
         service.fetchArtsNews { [weak self] response in
             guard let self else { return }
-          //  self.hideLoading()
             switch response {
             case .success(let news):
                 self.news = news
                 self.tableView.reloadData()
             case .failure(let error):
-                print("KERIM: \(error)")
+                print("fetchArtsNews: \(error)")
             }
         }
     }
