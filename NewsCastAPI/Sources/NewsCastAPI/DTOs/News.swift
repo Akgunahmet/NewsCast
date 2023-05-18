@@ -10,7 +10,6 @@ import Foundation
 public struct NewsResult: Decodable {
     public let results: [News]?
     public let numResults: Int?
-
     
     enum CodingKeys: String, CodingKey {
         case results
@@ -29,7 +28,7 @@ public struct News: Decodable {
     public let url: String?
     public var isValid: Bool {
         return title != nil || abstract != nil || multimedia?.first != nil
-        }
+    }
     enum CodingKeys: String, CodingKey {
         case section, title, abstract, byline, multimedia, url
         case itemType = "item_type"
@@ -38,5 +37,5 @@ public struct News: Decodable {
 }
 public struct Media: Decodable {
     public let url: String?
-   public let type: String?
+    public let type: String?
 }

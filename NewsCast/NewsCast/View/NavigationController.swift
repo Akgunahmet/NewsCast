@@ -12,11 +12,8 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.tintColor = UIColor.darkGray
-        navigationController?.navigationBar.barTintColor = .blue // veya istediğiniz renk
+        navigationController?.navigationBar.barTintColor = .blue
 
-        // Navigation barın altındaki çizginin rengini belirleyin
-        navigationController?.navigationBar.shadowImage = UIImage() // Çizgiyi gizlemek için boş bir görüntü atıyoruz
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) // Arka plan görüntüsünü sıfırlıyoruz
     }
 }
 

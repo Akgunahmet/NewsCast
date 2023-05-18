@@ -34,9 +34,6 @@ class LoadingView {
                 activityIndicator.startAnimating()
             }
         }
-//        UIApplication.shared.windows.first?.addSubview(blurView)
-//        blurView.translatesAutoresizingMaskIntoConstraints = false
-//        activityIndicator.startAnimating()
     }
     
     func hideLoading() {

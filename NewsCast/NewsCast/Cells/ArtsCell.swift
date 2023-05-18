@@ -9,7 +9,7 @@ import UIKit
 import NewsCastAPI
 
 class ArtsCell: UITableViewCell {
-    
+    // MARK: Properties
     @IBOutlet weak var artsNewsImage: UIImageView!
     @IBOutlet weak var artsNewsTitle: UILabel!
     @IBOutlet weak var artsNewsAbstract: UILabel!
@@ -18,7 +18,7 @@ class ArtsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+    // MARK: Function
     func setup(news: News) {
         artsNewsTitle.text = news.title
         artsNewsAbstract.text = news.abstract

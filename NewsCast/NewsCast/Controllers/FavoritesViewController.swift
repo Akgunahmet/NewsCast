@@ -11,17 +11,17 @@ import CoreData
 import SafariServices
 
 class FavoritesViewController: UIViewController {
+    // MARK: Properties
     let context = appDelegate.persistentContainer.viewContext
     var favoriteNewsList = [NewsFavorites]()
-    
     @IBOutlet weak var tableView: UITableView!
-    
+    // MARK: LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
         tableView.reloadData()
     }
-    
+    // MARK: Fetch Function
     func fetchData() {
         do {
             favoriteNewsList = try context.fetch(NewsFavorites.fetchRequest())
@@ -29,25 +29,9 @@ class FavoritesViewController: UIViewController {
             print("Error fetching data: \(error)")
         }
     }
-    
     @IBAction func deleteAll(_ sender: UIBarButtonItem) {
         showConfirmationAlert()
     }
-    
-    func showConfirmationAlert() {
-        let alertController = UIAlertController(title: "Delete All News", message: "Are you sure you want to delete all news?", preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-            self?.deleteAllData()
-        }
-        
-        alertController.addAction(cancelAction)
-        alertController.addAction(deleteAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
     func deleteAllData() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NewsFavorites.fetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -61,8 +45,22 @@ class FavoritesViewController: UIViewController {
             print("Error deleting data: \(error)")
         }
     }
+    // MARK: Alert
+    func showConfirmationAlert() {
+        let alertController = UIAlertController(title: "Delete All News", message: "Are you sure you want to delete all news?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.deleteAllData()
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
-
+// MARK: TableView Extension
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoriteNewsList.count
@@ -108,7 +106,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
+// MARK: NSFetchedResultsController Extension
 extension FavoritesViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
@@ -124,5 +122,5 @@ extension FavoritesViewController: NSFetchedResultsControllerDelegate {
 
 
 
-    
+
 
