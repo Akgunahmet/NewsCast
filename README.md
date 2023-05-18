@@ -16,10 +16,15 @@
  <br> - SafariViewController
  <br> - Tabbar
  <br> - NavigationController 
+ - AutoLayout
  - CoreData
  - Alamofire
  - SDWebImage
- - Delegation Pattern <br><br>
+ - Delegation Pattern 
+ - MVC Design Pattern <br>
+   ![MVC](https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/37e9f2f6-f696-4e95-a45e-ef5b357b8125)
+
+
  
  ## Installation <br>
  * Download or clone the project.
