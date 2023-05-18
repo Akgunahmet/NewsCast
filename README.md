@@ -1,12 +1,12 @@
  # NewsCast App <br>
- "Haber uygulamamım size güncel sanat, bilim ve dünya haberlerine kolay erişim imkanı sunuyor. Uygulamamımda çeşitli kategorilerdeki haberlere göz atabilir, ilginizi çeken haberlerin detaylarını inceleyebilir ve hatta haber sitelerini ziyaret edebilirsiniz. Okumak istediğiniz haberleri favorilere ekleyerek kolaylıkla ulaşabilir ve asla unutmayabilirsiniz. Güncel ve çeşitli haberleri takip etmek için haber uygulamamı keşfedin ve dünyadaki gelişmeleri yakından takip edin. Haberlerin heyecan verici dünyasına adım atın ve bilgi dolu bir deneyim yaşayın!" <br><br>
- ## Özellikler <br>
- * Anasayfada [NYTimes API](https://developer.nytimes.com/docs/top-stories-product/1/overview) 'dan gelen veriler gösteriliyor.
- * Kullanıcı isterse farklı kategorilerden çekilmiş olan haberleri okuyabiliyor.
- * Favorilere eklediği haberler CoreData 'ya kaydediliyor.
- * Favorilere eklenen haberlerden web sitesine ulaşılabiliyor. <br><br>
+ "My news application provides you with easy access to current art, science, and world news. You can browse through news articles in various categories, explore the details of the ones that catch your interest, and even visit the news websites. By adding your favorite news articles to the favorites section, you can easily access them and never forget to read them. Discover my news application to stay updated with current and diverse news, and keep yourself informed about global developments. Step into the exciting world of news and have an informative experience!" <br><br>
+ ## Features <br>
+ * On the homepage, the data retrieved from the [NYTimes API](https://developer.nytimes.com/docs/top-stories-product/1/overview) is displayed.
+ * The user has the option to read news articles from different categories if desired.
+ * The news articles that the user adds to favorites are saved in CoreData.
+ * The users can access the website of the news articles they have added to favorites. <br><br>
  
- ## Kullanılanlar <br>
+ ## Dependencies <br>
  - UIKit
  <br> - TableView
  <br> - SafariViewController
@@ -17,9 +17,10 @@
  - SDWebImage
  - Delegation Pattern <br><br>
  
- ## Kurulum <br>
- * Projeyi indirin veya clone'layın.
- * *spm* ile *Alamofire* ve *SdWebImage* paketini yükleyin
- * [NYTimes](https://developer.nytimes.com/docs/top-stories-product/1/overview) 'dan alacağınız API Key'i Services->NewsService.swift dosyasındaki ilgili yere ekleyin!
- ![Ekran Resmi 2023-05-18 19 41 59](https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/366d7e56-6824-4bf0-bb45-21b523fb8309)
- * Proje kullanıma hazır, Keyfini sürün :)
+ ## Installation <br>
+ * Download or clone the project.
+ * *Install the *Alamofire* and *SdWebImage* packages using *SPM*
+ * Add your API Key from [NYTimes](https://developer.nytimes.com/docs/top-stories-product/1/overview) to the appropriate location in Services->NewsService.swift file!
+ ![Ekran Resmi 2023-05-18 19 46 16](https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/f6890f81-963d-47c7-8bf1-e28825948cbd)
+ * The project is ready to use. Enjoy! :)
+
