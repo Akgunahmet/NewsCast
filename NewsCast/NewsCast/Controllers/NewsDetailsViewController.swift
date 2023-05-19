@@ -5,10 +5,6 @@
 //  Created by Ahmet Akgün on 12.05.2023.
 //
 
-
-
-
-
 import UIKit
 import NewsCastAPI
 import SDWebImage
@@ -45,9 +41,7 @@ class NewsDetailsViewController: UIViewController {
         guard let news = news else {
             return
         }
-        
         let isFavorite = isNewsFavorite(news)
-        
         if isFavorite {
             removeNewsFromFavorites(news)
         } else {
@@ -58,7 +52,7 @@ class NewsDetailsViewController: UIViewController {
     private func isNewsFavorite(_ news: News) -> Bool {
         let fetchRequest: NSFetchRequest<NewsFavorites> = NewsFavorites.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "favoriteTitle == %@", news.title ?? "")
-        
+
         do {
             let results = try context.fetch(fetchRequest)
             return results.first != nil
@@ -125,7 +119,6 @@ class NewsDetailsViewController: UIViewController {
     // MARK:   Button Image Function
     private func checkIfNewsIsFavorite() {
         guard let newsTitle = news?.title else { return }
-        
         let fetchRequest: NSFetchRequest<NewsFavorites> = NewsFavorites.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "favoriteTitle == %@", newsTitle)
         

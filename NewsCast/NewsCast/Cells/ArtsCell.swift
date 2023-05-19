@@ -14,7 +14,7 @@ class ArtsCell: UITableViewCell {
     @IBOutlet weak var artsNewsTitle: UILabel!
     @IBOutlet weak var artsNewsAbstract: UILabel!
     @IBOutlet weak var artsNewsByline: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

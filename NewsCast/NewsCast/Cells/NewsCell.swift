@@ -8,7 +8,6 @@
 import UIKit
 import NewsCastAPI
 
-
 class NewsCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var newsImage: UIImageView!

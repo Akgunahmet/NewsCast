@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+// MARK: Protocol
 protocol LoadingShowable where Self: UIViewController {
     func showLoading()
     func hideLoading()
 }
-
+// MARK: Extension
 extension LoadingShowable {
     func showLoading() {
         LoadingView.shared.startLoading()

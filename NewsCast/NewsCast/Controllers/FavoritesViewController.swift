@@ -5,7 +5,6 @@
 //  Created by Ahmet Akgün on 15.05.2023.
 //
 
-
 import UIKit
 import CoreData
 import SafariServices
@@ -48,13 +47,10 @@ class FavoritesViewController: UIViewController {
     // MARK: Alert
     func showConfirmationAlert() {
         let alertController = UIAlertController(title: "Delete All News", message: "Are you sure you want to delete all news?", preferredStyle: .alert)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
             self?.deleteAllData()
         }
-        
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
         present(alertController, animated: true, completion: nil)

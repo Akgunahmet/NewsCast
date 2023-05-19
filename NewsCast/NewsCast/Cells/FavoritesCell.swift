@@ -8,19 +8,13 @@
 import UIKit
 import SafariServices
 
-
 class FavoritesCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var favoritesImage: UIImageView!
     @IBOutlet weak var favoritesTitle: UILabel!
     @IBOutlet weak var favoritesAbstract: UILabel!
     var favorite: NewsFavorites?
-    //    override func awakeFromNib() {
-    //        super.awakeFromNib()
-    //    }
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //    }
+    
     // MARK: Function
     func setup(favorite: NewsFavorites) {
         favoritesTitle.text = "\(favorite.favoriteTitle ?? "") "
@@ -29,7 +23,6 @@ class FavoritesCell: UITableViewCell {
             favoritesImage.image = UIImage(data: imageData)
         } else {
             favoritesImage.image = UIImage(named: "placeholder") // or any other default image
-            
         }
     }
 }

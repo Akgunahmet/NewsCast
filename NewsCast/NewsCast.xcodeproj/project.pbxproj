@@ -116,7 +116,6 @@
 		E45819682A0E4CC50016513C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E4C560152A0D15DC00F6F428 /* CustomTabBarViewController.swift */,
 				E482F3842A119AA200E320C1 /* NavigationController.swift */,
 				E40A28272A1670DA0058540C /* LoadingView.swift */,
 				E40A28292A1670EF0058540C /* LoadingShowable.swift */,
@@ -131,6 +130,7 @@
 				E48CADFD2A12524700D9DF00 /* ArtsNewsViewController.swift */,
 				E458196A2A0E52100016513C /* NewsDetailsViewController.swift */,
 				E482F3862A119FA400E320C1 /* FavoritesViewController.swift */,
+				E4C560152A0D15DC00F6F428 /* CustomTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
