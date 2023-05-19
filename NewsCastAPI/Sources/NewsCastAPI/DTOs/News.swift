@@ -27,7 +27,7 @@ public struct News: Decodable {
     public let multimedia: [Media]?
     public let url: String?
     public var isValid: Bool {
-        return title != nil || abstract != nil || multimedia?.first != nil
+        return title != nil || abstract != nil || multimedia?.first != nil || byline != nil
     }
     enum CodingKeys: String, CodingKey {
         case section, title, abstract, byline, multimedia, url

@@ -75,7 +75,7 @@ extension NewsCastViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let news = self.news[indexPath.row]
-        if news.isValid && !news.title!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
+        if news.isValid && !news.title!.isEmpty && !news.byline!.isEmpty && !news.abstract!.isEmpty && ((news.multimedia?.first?.url?.isEmpty) != nil) {
             return 165.0
         } else {
             return 0.0 
