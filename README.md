@@ -21,6 +21,7 @@
  - Alamofire
  - SDWebImage
  - Delegation Pattern 
+ - This application is written as modular.
  - MVC Design Pattern <br>
    ![MVC](https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/37e9f2f6-f696-4e95-a45e-ef5b357b8125)
 
@@ -33,13 +34,18 @@
  ![Ekran Resmi 2023-05-18 19 46 16](https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/f6890f81-963d-47c7-8bf1-e28825948cbd)
  * The project is ready to use. Enjoy! :)
 
-## Videos
+## Application Videos
 *You can watch the promotional videos of the application 
 
-https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/ce83c1e7-a7d5-4b53-b1ba-a0be5b5a5a22
 
-https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/3bd92980-3bab-43c5-9dc9-9e1cc8c54ce6
+https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/9f7a5110-191a-4d1d-a367-397c033dcde3
 
-https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/653aa6a5-3e72-451d-8415-ea5835a9ff3d
+## Application Images
+<img src="https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/cc5574d2-c983-4d73-b601-0a0a11895d68" alt="NewsCast" width="300" height="600">
+<img src="https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/cdd6cffd-bb96-41d7-a690-e1a056cf81c7" alt="ArtsNews" width="300" height="600">
+<img src="https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/3eb50fc3-7bb6-42a7-980f-69446e38b07d" alt="DetailsPage" width="300" height="600"> 
+<img src="https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/35fe51d5-95fa-4d61-b093-342989ff4973" alt="WebSite" width="300" height="600">
+<img src="https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/298b6b8a-a22e-4932-aed0-6e4355caa53d" alt="FavoritesPage" width="300" height="600">
+<img src="https://github.com/Akgunahmet/AhmetAkgun_HW2/assets/116914693/8e59f8e5-a1e9-4705-b879-8119fd050d2c" alt="DeleteAllFavorites" width="300" height="600">
 
 
